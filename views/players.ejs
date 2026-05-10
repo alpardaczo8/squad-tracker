@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <%- include('partials/head', { title: 'Players' }) %>
+   </head>
+   <body>
+        <%- include('partials/navbar') %>
+        <h1>Welcome to the players' page</h1>
+        <table>
+            <% players.forEach(player => { %>
+                <tr>
+                    <td><%= player.name %></td>
+                    <td><%= player.position %></td>
+                </tr>
+            <% }) %>
+        </table>
+   </body>
+</html>
