@@ -1,6 +1,8 @@
+const { createTables } = require('./db/tables');
 const express = require('express');
-
 const app = express();
+
+createTables();
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
