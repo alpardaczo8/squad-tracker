@@ -13,4 +13,14 @@ router.get('/players', (req, res) => {
     }
 });
 
+router.post('/addPlayer', (req, res) => {
+    try {
+        addPlayer(req.body.name, req.body.position, req.body.date_of_birth);
+        res.redirect('/players');
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("Something went wrong with adding a new player!");
+    }
+});
+
 module.exports = router;

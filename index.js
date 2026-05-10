@@ -8,9 +8,9 @@ createTables();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-app.use('/', playersRouter);
 app.use(express.static('./public'));
-
+app.use(express.urlencoded({ extended: false }));
+app.use('/', playersRouter);
 
 app.get('/', (req, res) => {
 	res.render('index');

@@ -14,5 +14,13 @@
                 </tr>
             <% }) %>
         </table>
+
+        <form action="/addPlayer" method="POST">
+            <input type="text" name="name" placeholder="Player name" required>
+            <input type="text" name="position" placeholder="Position" required>
+            <input type="date" name="date_of_birth">
+            <input type="text" name="nationality" placeholder="Nationality">
+            <button type="submit">Add Player</button>
+        </form>
    </body>
 </html>
