@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <%- include('partials/head', { title: 'Players' }) %>
-   </head>
-   <body>
-        <%- include('partials/navbar') %>
-        <h1>Welcome to the players' page</h1>
-        <table>
-            <% players.forEach(player => { %>
-                <tr>
-                    <td><%= player.name %></td>
-                    <td><%= player.position %></td>
-                </tr>
-            <% }) %>
-        </table>
+  <head>
+    <%- include('partials/head', { title: 'Players' }) %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
 
-        <form action="/addPlayer" method="POST">
-            <input type="text" name="name" placeholder="Player name" required>
-            <input type="text" name="position" placeholder="Position" required>
-            <input type="date" name="date_of_birth">
-            <input type="text" name="nationality" placeholder="Nationality">
-            <button type="submit">Add Player</button>
+    <main class="container">
+      <h1 class="page-title">Squad</h1>
+
+      <div class="card">
+        <h2 class="card-title">Add Player</h2>
+        <form action="/addPlayer" method="POST" class="form">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Player name" class="input" required>
+            <input type="text" name="position" placeholder="Position" class="input" required>
+            <input type="date" name="date_of_birth" class="input">
+            <input type="text" name="nationality" placeholder="Nationality" class="input">
+            <button type="submit" class="btn">Add Player</button>
+          </div>
         </form>
-   </body>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Players</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Position</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% players.forEach(player => { %>
+              <tr>
+                <td><%= player.name %></td>
+                <td><%= player.position %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
 </html>
