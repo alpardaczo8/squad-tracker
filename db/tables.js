@@ -5,6 +5,7 @@ function createTables() {
         CREATE TABLE IF NOT EXISTS Teams (
             team_id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
+            country TEXT,
             is_our_team INTEGER NOT NULL DEFAULT 0
         );
 

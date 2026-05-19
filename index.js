@@ -2,6 +2,7 @@ const { createTables } = require('./db/tables');
 const express = require('express');
 const app = express();
 const playersRouter = require('./routes/players')
+const teamsRouter = require('./routes/teams')
 
 createTables();
 
@@ -11,6 +12,7 @@ app.set('views', './views');
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: false }));
 app.use('/', playersRouter);
+app.use('/', teamsRouter);
 
 app.get('/', (req, res) => {
 	res.render('index');

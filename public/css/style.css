@@ -202,3 +202,14 @@ nav a {
 nav a:hover {
   color: var(--color-text);
 }
+
+.hidden {
+  display: none;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}

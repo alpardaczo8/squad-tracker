@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head', { title: 'Teams' }) %>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+
+        <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Teams</h2>
+            <button class="btn" id="toggleFormBtn">Add Team</button>
+        </div>
+
+        <div id="addTeamForm" class="form hidden">
+            <form action="/teams/add" method="POST">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Team name" class="input" required>
+                <input type="text" name="country" placeholder="Country" class="input" required>
+                <label class="checkbox-label">
+                <input type="checkbox" name="is_our_team" value="1">
+                Our team
+                </label>
+                <button type="submit" class="btn">Save</button>
+            </div>
+            </form>
+        </div>
+            <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% teams.forEach(team => { %>
+              <tr>
+                <td><%= team.name %></td>
+                <td><%= team.country %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        </div>
+        <script src="/js/teams.js"></script>
+    </body>
+</html>
