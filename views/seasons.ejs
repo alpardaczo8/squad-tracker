@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head', { title: 'Seasons' }) %>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+
+        <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Seasons</h2>
+            <button class="btn" id="toggleFormBtn">Add Season</button>
+        </div>
+
+        <div id="addSeasonForm" class="form hidden">
+            <form action="/seasons/add" method="POST">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Season name" class="input" required>
+                <label class="checkbox-label">
+                <input type="checkbox" name="is_current" value="1">
+                Current season
+                </label>
+                <button type="submit" class="btn">Save</button>
+            </div>
+            </form>
+        </div>
+            <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Current season</th>
+                </tr>
+            </thead>
+             <tbody>
+                <% seasons.forEach(season => { %>
+                <tr>
+                    <td><%= season.name %></td>
+                    <td><%= seasons.is_current %></td>
+                </tr>
+                <% }) %>
+          </tbody>
+        </table>
+
+        </div>
+        <script src="/js/seasons.js"></script>
+    </body>
+</html>
