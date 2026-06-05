@@ -4,6 +4,7 @@ const app = express();
 const playersRouter = require('./routes/players');
 const teamsRouter = require('./routes/teams');
 const seasonsRouter = require('./routes/seasons');
+const competitionsRouter = require('./routes/competitions');
 
 createTables();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', playersRouter);
 app.use('/', teamsRouter);
 app.use('/', seasonsRouter);
+app.use('/', competitionsRouter);
 
 app.get('/', (req, res) => {
 	res.render('index');

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head', { title: 'Competitions' }) %>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+
+        <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Competitions</h2>
+            <button class="btn" id="toggleFormBtn">Add competition</button>
+        </div>
+
+        <div id="addTeamForm" class="form hidden">
+            <form action="/competitions/add" method="POST">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Competititon name" class="input" required>
+                <input type="text" name="type" placeholder="Competition type" class="input" required>
+                <select name="season_id" class="input" required>
+                    <option value="" disabled selected>Select season</option>
+                    <% seasons.forEach(season => { %>
+                        <option value="<%= season.season_id %>"><%= season.name %></option>
+                    <% }) %>
+                </select>
+                <button type="submit" class="btn">Save</button>
+            </div>
+            </form>
+        </div>
+            <table class="table">
+          <thead>
+            <tr>
+              <th>Competition name</th>
+              <th>Competition type</th>
+              <th>Season</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% competitions.forEach(competition => { %>
+              <tr>
+                <td><%= competition.name %></td>
+                <td><%= competition.type %></td>
+                <td><%= competition.season_name %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        </div>
+        <script src="/js/teams.js"></script>
+    </body>
+</html>
