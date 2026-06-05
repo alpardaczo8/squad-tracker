@@ -9,10 +9,10 @@
         <div class="card">
         <div class="card-header">
             <h2 class="card-title">Competitions</h2>
-            <button class="btn" id="toggleFormBtn">Add competition</button>
+            <button class="btn" id="toggleFormBtn">Add</button>
         </div>
 
-        <div id="addTeamForm" class="form hidden">
+        <div id="toggleForm" class="form hidden">
             <form action="/competitions/add" method="POST">
             <div class="form-row">
                 <input type="text" name="name" placeholder="Competititon name" class="input" required>
@@ -46,6 +46,5 @@
           </tbody>
         </table>
         </div>
-        <script src="/js/teams.js"></script>
     </body>
 </html>

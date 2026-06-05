@@ -9,10 +9,10 @@
         <div class="card">
         <div class="card-header">
             <h2 class="card-title">Teams</h2>
-            <button class="btn" id="toggleFormBtn">Add Team</button>
+            <button class="btn" id="toggleFormBtn">Add</button>
         </div>
 
-        <div id="addTeamForm" class="form hidden">
+        <div id="toggleForm" class="form hidden">
             <form action="/teams/add" method="POST">
             <div class="form-row">
                 <input type="text" name="name" placeholder="Team name" class="input" required>
@@ -42,6 +42,5 @@
           </tbody>
         </table>
         </div>
-        <script src="/js/teams.js"></script>
     </body>
 </html>
